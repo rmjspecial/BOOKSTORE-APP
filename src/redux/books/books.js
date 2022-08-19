@@ -1,27 +1,29 @@
+import { v4 as uuidv4 } from 'uuid';
 import * as actions from './actionTypes';
 
-const lastId = 0;
-// reducer
-export default function booksReducer(state = [], action) {
+const initBooks = [];
+
+// const initID = 0;
+const bookReducer = (state = initBooks, action) => {
   switch (action.type) {
     case actions.ADD_BOOK:
       return [
         ...state,
         {
-          id: lastId + 1,
+          id: uuidv4(),
           title: action.payload.title,
           author: action.payload.author,
         },
       ];
     case actions.REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.payload);
+      return state.filter((book) => book.id !== action.payload.id);
     default:
       return state;
   }
-}
-// action creators
+};
+export default bookReducer;
 
-export const bookAdded = (title, author) => ({
+export const addBook = (title, author) => ({
   type: actions.ADD_BOOK,
   payload: {
     title,
@@ -29,7 +31,9 @@ export const bookAdded = (title, author) => ({
   },
 });
 
-export const bookRemoved = (id) => ({
+export const removeBook = (id) => ({
   type: actions.REMOVE_BOOK,
-  payload: id,
+  payload: {
+    id,
+  },
 });
