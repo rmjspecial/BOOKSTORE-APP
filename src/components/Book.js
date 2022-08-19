@@ -1,27 +1,29 @@
 import React from 'react';
 import './styles/Book.css';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
 const Book = (props) => {
-  const { id, title, author } = props.bookInfo;
-  return (
-    <li key={id} className="bookList">
+  const dispatch = useDispatch();
+  const handleRemove = (id) => {
+    dispatch(removeBook(id));
+  };
+  return props.bookInfo.map((book) => (
+    <li key={book.id} className="bookList">
       <div className="bookItem">
-        <span>
-          {title}
-          { }
-          {' '}
-          by
-          {' '}
-          {' '}
-          {author}
+        <h3>{book.title}</h3>
+        <small>{book.author}</small>
+        <button
+          type="button"
+          className="delete-btn"
+          onClick={() => handleRemove(book.id)}
 
-        </span>
-        <button type="button" className="delete-btn">
-          Delete
+        >
+          Remove
         </button>
       </div>
     </li>
-  );
+  ));
 };
 
 export default Book;
