@@ -49,6 +49,10 @@
   color: #fff;
 }
 
+.my-form button:hover {
+  color: #9fd4fc;
+}
+
 @media (max-width: 500px) {
   .my-form {
     display: grid;
