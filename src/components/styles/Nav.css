@@ -14,10 +14,14 @@ nav {
 
 .flex-left {
   flex: 1;
-  color: #0290ff;
+  color: #6b84f1;
   font-weight: bold;
   font-size: 35px;
   font-family: 'Courier New', Courier, monospace;
+}
+
+.flex-left:hover {
+  color:#0b2bb9;
 }
 
 .nav-links {
@@ -27,7 +31,7 @@ nav {
   font-size: 18px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  color: #000;
+  color: rgb(10, 10, 10);
 }
 
 @media (max-width: 375px) {
