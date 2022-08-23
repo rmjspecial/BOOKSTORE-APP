@@ -25,20 +25,25 @@
 }
 
 .bookItem small {
-  color: #9fc1de;
+  color: #1c1d1f;
 }
 
 .delete-btn {
-  background-color: coral;
+  background-color: rgb(240, 73, 12);
   padding: 5px 8px;
   outline: none;
   border: none;
-  font-size: 15px;
+  font-size: 16px;
   cursor: pointer;
   width: 15%;
   margin-top: 0.5rem;
   color: #fff;
 }
+
+.delete-btn:hover {
+  color: coral;
+}
+
 
 .BookCategory {
   color: #888;
