@@ -6,7 +6,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 10;
-  color: #000;
+  color: rgb(26, 24, 24);
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -27,7 +27,7 @@ nav {
   font-size: 18px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  color: #9e9ea7;
+  color: #000;
 }
 
 @media (max-width: 375px) {
